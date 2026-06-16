@@ -1,0 +1,407 @@
+/* Chinyonga Luxury Lodge - Professional Homepage Stylesheet */
+:root {
+    --accent: #b58b56;
+    --accent-dark: #8f6a42;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --shadow: 0 12px 40px rgb(240, 242, 248);
+    --shadow-lg: 0 20px 60px rgba(200, 204, 209, 0.12);
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", -apple-system, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Header & Navigation */
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.navbar {
+    width: 100%;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo h1 {
+    font-size: 1.4rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    font-weight: 700;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 32px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.nav-link:hover {
+    color: var(--accent);
+    transform: translateY(-1px);
+}
+
+.nav-link.login-link {
+    background: var(--accent);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.nav-link.login-link:hover {
+    background: var(--accent-dark);
+    color: var(--white);
+}
+
+/* Hero Section */
+.hero {
+    margin-top: 70px;
+    background: linear-gradient(135deg, rgba(204, 213, 233, 0.7), rgba(215, 222, 231, 0.75)), 
+                url('https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=1024x1024&w=is&k=20&c=lNQVwTuYzo9wQZfZzHioQMCJRTHWVzhX1UXmcqgnF5k=') center/cover no-repeat;
+    min-height: calc(100vh - 70px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 40px 20px;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero-content h1 {
+    font-size: clamp(2.2rem, 6vw, 4.5rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    opacity: 0.95;
+    margin-bottom: 32px;
+    line-height: 1.5;
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 36px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: var(--white);
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    box-shadow: 0 8px 28px rgba(181, 139, 86, 0.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(181, 139, 86, 0.35);
+}
+
+.btn-primary:active {
+    transform: translateY(-1px);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Footer */
+.footer {
+    background: #0f172a;
+    color: #e5e7eb;
+    padding: 60px 40px;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.footer h2 {
+    font-size: 2rem;
+    color: var(--white);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+}
+
+.footer > .container > p {
+    font-size: 1rem;
+    color: rgba(229, 231, 235, 0.8);
+    max-width: 600px;
+    margin-bottom: 24px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.footer-section h4 {
+    font-size: 1.05rem;
+    color: var(--white);
+    margin-bottom: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.footer-section p {
+    color: rgba(229, 231, 235, 0.75);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: rgba(229, 231, 235, 0.75);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 32px;
+    text-align: center;
+    color: rgba(229, 231, 235, 0.6);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+.footer-bottom a:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .nav-container {
+        padding: 16px 28px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .container {
+        padding: 0 28px;
+    }
+
+    .footer {
+        padding: 48px 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 14px;
+        padding: 12px 20px;
+    }
+
+    .nav-menu {
+        gap: 16px;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .hero {
+        margin-top: 120px;
+    }
+
+    .hero-content {
+        padding: 30px 16px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .btn-primary {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+
+    .footer {
+        padding: 40px 20px;
+    }
+
+    .footer .container > p {
+        font-size: 0.95rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-menu {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    .logo h1 {
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+    }
+
+    .hero {
+        margin-top: 100px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-primary {
+        padding: 11px 24px;
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 16px;
+    }
+
+    .footer {
+        padding: 32px 16px;
+    }
+
+    .footer h2 {
+        font-size: 1.5rem;
+    }
+
+    .footer-section h4 {
+        font-size: 0.95rem;
+    }
+
+    .footer-bottom {
+        padding-top: 24px;
+        font-size: 0.8rem;
+    }
+}

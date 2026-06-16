@@ -1,0 +1,379 @@
+/* Professional Our Values Page Styles - Chinyonga Luxury Lodge */
+:root {
+    --accent: #b58b56;
+    --accent-dark: #8f6a42;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --shadow: 0 12px 40px rgba(31, 41, 55, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    padding: 20px 32px;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links li a {
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.25s ease;
+    font-size: 0.95rem;
+    text-decoration: none;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--accent);
+}
+
+.nav-links li a.login {
+    background: var(--accent);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.nav-links li a.login:hover {
+    background: var(--accent-dark);
+    color: var(--white);
+}
+
+/* Standards & Values Header Section */
+.standards-values {
+    padding: 80px 32px 60px;
+    background: linear-gradient(180deg, rgba(181, 139, 86, 0.08), rgba(181, 139, 86, 0.03));
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.standards-values h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 16px;
+    color: var(--text);
+    font-weight: 800;
+}
+
+.standards-values p {
+    font-size: 1.1rem;
+    color: var(--muted);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+    text-transform: capitalize;
+}
+
+/* Values Grid */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    padding: 64px 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Value Cards */
+.value-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(181, 139, 86, 0.12);
+    border-color: var(--accent);
+}
+
+.value-card i {
+    font-size: 2.4rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover i {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.value-card h3 {
+    font-size: 1.3rem;
+    color: var(--text);
+    letter-spacing: 0.01em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.value-card p {
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Amenities Section */
+.amenities-section {
+    padding: 80px 32px;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+}
+
+.section-title {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+    text-align: center;
+    color: var(--text);
+    font-weight: 800;
+}
+
+.amenities-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.amenity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 32px 24px;
+    background: linear-gradient(135deg, rgba(181, 139, 86, 0.06), rgba(181, 139, 86, 0.02));
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    text-align: center;
+    transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    min-height: 140px;
+}
+
+.amenity:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(135deg, rgba(181, 139, 86, 0.12), rgba(181, 139, 86, 0.08));
+    border-color: var(--accent);
+}
+
+.amenity i {
+    font-size: 2rem;
+    color: var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.amenity:hover i {
+    transform: scale(1.15);
+}
+
+.amenity p,
+.amenity {
+    color: var(--text);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    nav {
+        padding: 16px 28px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+
+    .standards-values {
+        padding: 60px 28px 50px;
+    }
+
+    .values-grid {
+        padding: 52px 28px;
+        gap: 24px;
+    }
+
+    .amenities-section {
+        padding: 60px 28px;
+    }
+
+    .amenities-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 14px 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .standards-values {
+        padding: 50px 20px 40px;
+    }
+
+    .standards-values h2 {
+        font-size: 1.8rem;
+    }
+
+    .standards-values p {
+        font-size: 1rem;
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+
+    .value-card {
+        padding: 28px 20px;
+    }
+
+    .value-card i {
+        font-size: 2rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.8rem;
+        margin-bottom: 32px;
+    }
+
+    .amenities-section {
+        padding: 50px 20px;
+    }
+
+    .amenities-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .amenity {
+        padding: 24px 18px;
+        min-height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.8rem;
+    }
+
+    .standards-values {
+        padding: 40px 16px 32px;
+    }
+
+    .standards-values h2 {
+        font-size: 1.5rem;
+        letter-spacing: -0.01em;
+    }
+
+    .standards-values p {
+        font-size: 0.95rem;
+    }
+
+    .values-grid {
+        padding: 32px 16px;
+        gap: 16px;
+    }
+
+    .value-card {
+        padding: 22px 16px;
+    }
+
+    .value-card i {
+        font-size: 1.8rem;
+    }
+
+    .value-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .value-card p {
+        font-size: 0.9rem;
+    }
+
+    .section-title h2 {
+        font-size: 1.5rem;
+        margin-bottom: 24px;
+        letter-spacing: -0.01em;
+    }
+
+    .amenities-section {
+        padding: 40px 16px;
+    }
+
+    .amenity {
+        padding: 20px 14px;
+        min-height: 110px;
+    }
+
+    .amenity i {
+        font-size: 1.6rem;
+    }
+
+    .amenity p {
+        font-size: 0.85rem;
+        letter-spacing: 0.03em;
+    }
+}

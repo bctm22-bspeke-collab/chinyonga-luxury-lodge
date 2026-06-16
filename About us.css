@@ -1,0 +1,254 @@
+/* Professional About Us Page Styles - Chinyonga Luxury Lodge */
+:root {
+    --accent: #b58b56;
+    --accent-dark: #8f6a42;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --bg: #f9fafb;
+    --white: #ffffff;
+    --border: #e5e7eb;
+    --shadow: 0 12px 40px rgba(31, 41, 55, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: "Inter", "Segoe UI", -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+/* Navigation */
+nav {
+    width: 100%;
+    padding: 20px 32px;
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    list-style: none;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links li a {
+    color: var(--text);
+    font-weight: 500;
+    transition: color 0.25s ease;
+    font-size: 0.95rem;
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+    color: var(--accent);
+}
+
+.nav-links li a.login {
+    background: var(--accent);
+    color: var(--white);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.nav-links li a.login:hover {
+    background: var(--accent-dark);
+    color: var(--white);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+/* About Section */
+.about {
+    padding: 80px 32px;
+    background: var(--white);
+}
+
+.about h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 24px;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.about > .container > p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    line-height: 1.8;
+    max-width: 720px;
+    margin-bottom: 56px;
+}
+
+/* Feature Boxes */
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    margin-top: 48px;
+}
+
+.feature-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 36px 28px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.feature-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(181, 139, 86, 0.12);
+    border-color: var(--accent);
+}
+
+.feature-box h3 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+    color: var(--text);
+    letter-spacing: 0.01em;
+}
+
+.feature-box p {
+    color: var(--muted);
+    font-size: 0.96rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Services Preview Section */
+.services-preview {
+    padding: 80px 32px;
+    background: linear-gradient(180deg, rgba(181, 139, 86, 0.04), rgba(181, 139, 86, 0.02));
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.services-preview h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin-bottom: 12px;
+    color: var(--text);
+}
+
+.services-preview > .container > p {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Call-to-Action Button */
+.view-all-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 32px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 8px 24px rgba(181, 139, 86, 0.2);
+}
+
+.view-all-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(181, 139, 86, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 16px 20px;
+    }
+
+    .nav-links {
+        gap: 16px;
+        font-size: 0.9rem;
+    }
+
+    .about {
+        padding: 60px 20px;
+    }
+
+    .about h2,
+    .services-preview h2 {
+        font-size: 1.8rem;
+        margin-bottom: 18px;
+    }
+
+    .about > .container > p {
+        font-size: 0.98rem;
+        margin-bottom: 40px;
+    }
+
+    .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-box {
+        padding: 28px 20px;
+    }
+
+    .services-preview {
+        padding: 60px 20px;
+    }
+
+    .view-all-btn {
+        padding: 12px 28px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+        font-size: 0.85rem;
+    }
+
+    .about h2,
+    .services-preview h2 {
+        font-size: 1.6rem;
+    }
+
+    .feature-box h3 {
+        font-size: 1.05rem;
+    }
+}
